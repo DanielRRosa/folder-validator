@@ -17,16 +17,13 @@ npm install folder-validator
 Here's a simple example of how to use the package:
 
 ```javascript
-import { defineFolders } from "./src/functions/folder";
-
-export default defineFolders([
+module.exports = [
   {
     name: "src",
     required: true,
     children: [
       {
         name: "components",
-        alias: ["comp", "ui"],
         required: true,
       },
       {
@@ -44,5 +41,5 @@ export default defineFolders([
     alias: ["css"],
     required: false,
   },
-]);
+];
 ```
