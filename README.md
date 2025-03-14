@@ -21,7 +21,7 @@ Here's a simple example of how to use the package:
  ** The name of the file need to be folder.config.js and
  ** need to be in the root of the project to work wit your project
  */
-module.exports = [
+export default [
   {
     name: "src",
     required: true,
@@ -42,7 +42,6 @@ module.exports = [
   },
   {
     name: "styles",
-    alias: ["css"],
     required: false,
   },
 ];

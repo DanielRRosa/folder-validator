@@ -25,12 +25,14 @@ async function loadConfig(configPath: string) {
     if (ext === ".json") {
       const configContent = await fs.promises.readFile(configPath, "utf-8");
       const config = JSON.parse(configContent);
-      return defineFolders(config.folders);
+      const parsedConfig = config.folders || config;
+      return defineFolders(Array.isArray(parsedConfig) ? parsedConfig : []);
     } else {
       // For .js or .ts files, import them as ES modules
       const absolutePath = path.resolve(configPath);
       const config = await import(absolutePath);
-      return defineFolders(config.default?.folders || config.folders);
+      const parsedConfig = config.default?.folders || config.default || config.folders || config;
+      return defineFolders(Array.isArray(parsedConfig) ? parsedConfig : []);
     }
   } catch (error) {
     console.error(chalk.red(`Error loading config: ${error}`));

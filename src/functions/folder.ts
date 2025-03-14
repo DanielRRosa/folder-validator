@@ -40,13 +40,10 @@ const loadUserConfig = async (
   const ext = path.extname(configPath);
 
   try {
-    if (ext === ".ts") {
+    if (ext === ".ts" || ext === ".js") {
       const { default: config } = await import(
         `file://${path.resolve(configPath)}`
       );
-      return defineFolders(config);
-    } else if (ext === ".js") {
-      const config = require(path.resolve(configPath));
       return defineFolders(config);
     } else {
       throw new Error("Unsupported config file format. Use .ts or .js");
