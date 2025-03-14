@@ -9,7 +9,7 @@ The **Folder Validator** package is a powerful tool designed to ensure consisten
 To install the package, run the following command:
 
 ```bash
-npm install folder-validator
+npm install folder-validator -D
 ```
 
 ## Usage
@@ -17,6 +17,10 @@ npm install folder-validator
 Here's a simple example of how to use the package:
 
 ```javascript
+/* This is a configuration file for the Folder Validator
+ ** The name of the file need to be folder.config.js and
+ ** need to be in the root of the project to work wit your project
+ */
 module.exports = [
   {
     name: "src",
