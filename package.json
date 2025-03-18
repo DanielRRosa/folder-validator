@@ -1,12 +1,15 @@
 {
+  "version": "1.0.3",
   "name": "folder-validator",
   "description": "A powerful tool to validate and maintain consistent folder structures across your projects",
+  "author": "Daniel Rosa",
+  "license": "MIT",
+  "type": "module",
   "homepage": "https://github.com/danielrrosa/folder-validator",
   "repository": {
     "type": "git",
     "url": "https://github.com/danielrrosa/folder-validator.git"
   },
-  "version": "1.0.3",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -40,9 +43,6 @@
     "react",
     "typescript"
   ],
-  "author": "Daniel Rosa",
-  "license": "MIT",
-  "type": "module",
   "engines": {
     "node": ">=14.0.0"
   },
