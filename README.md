@@ -37,7 +37,7 @@ npm install folder-validator -D
 1. Create a `folder.config.js` file in your project root:
 
 ```javascript
-export default [
+module.exports = [
   {
     name: "src",
     required: true,
@@ -68,7 +68,7 @@ export default [
 ```json
 {
   "scripts": {
-    "validate:folders": "folder-validator",
+    "validate": "folder-validator",
     "validate:watch": "folder-validator --watch"
   }
 }
@@ -77,10 +77,10 @@ export default [
 3. Run the validator:
 
 ```bash
-# One-time validation
-npm run validate:folders
+# Run a one-time validation on the folder structure of your project
+npm run validate
 
-# Watch mode for development
+# Watch the folder structure for changes that might break the application or is not allowed on the configuration defined by the folder.config.js file
 npm run validate:watch
 ```
 
@@ -99,7 +99,7 @@ npm run validate:watch
 ### Basic Structure
 
 ```javascript
-export default [
+module.exports = [
   {
     name: "src",
     required: true,
@@ -110,7 +110,7 @@ export default [
 ### Complex Structure
 
 ```javascript
-export default [
+module.exports = [
   {
     name: "src",
     required: true,
