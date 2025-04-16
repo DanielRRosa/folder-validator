@@ -1,1 +1,1 @@
-export * from "./default-folders.js";
+export * from "./default-folders";
